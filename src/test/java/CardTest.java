@@ -158,4 +158,18 @@ public class CardTest {
         //then
         Assert.assertEquals("list win",result);
     }
+
+    @Test
+    public void should_return_list1_win_when_give_two_Straight_list_and_list1_is_high_than_list(){
+        //given
+        List list = Arrays.asList(new Card("2s"),
+                new Card("3d"), new Card("4c"), new Card("5d"), new Card("6d"));
+        List list1 = Arrays.asList(new Card("3s"),
+                new Card("4d"), new Card("5c"), new Card("6d"), new Card("7s"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("list1 win",result);
+    }
 }
