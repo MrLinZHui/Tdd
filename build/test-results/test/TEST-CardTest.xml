@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-10T03:23:21" hostname="ZHA-ITA114-W10" time="0.004">
+<testsuite name="CardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-08-10T04:15:47" hostname="ZHA-ITA114-W10" time="0.018">
   <properties/>
-  <testcase name="should_return_list1_win_when_give_two_high_list" classname="CardTest" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="should_return_equal_when_give_two_high_list_num_is_equal" classname="CardTest" time="0.014"/>
+  <testcase name="should_return_list1_win_when_give_two_high_list" classname="CardTest" time="0.003"/>
+  <system-out><![CDATA[[2, 3, 5, 9, 14],[2, 3, 5, 9, 14]
+[2, 3, 5, 6, 7],[3, 4, 5, 9, 14]
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
