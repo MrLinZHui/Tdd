@@ -172,4 +172,18 @@ public class CardTest {
         //then
         Assert.assertEquals("list1 win",result);
     }
+
+    @Test
+    public void should_return_list1_win_when_a_same_color_list1_and_give_a_Straight_list(){
+        //given
+        List list = Arrays.asList(new Card("5s"),
+                new Card("6d"), new Card("7c"), new Card("8d"), new Card("9d"));
+        List list1 = Arrays.asList(new Card("3d"),
+                new Card("4d"), new Card("5d"), new Card("6d"), new Card("8d"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("list1 win",result);
+    }
 }
