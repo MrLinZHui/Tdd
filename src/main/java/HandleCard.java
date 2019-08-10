@@ -1,5 +1,4 @@
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static java.util.Collections.sort;
@@ -8,12 +7,18 @@ public class HandleCard {
     public static String compareCard(List<Card> list, List<Card> list1) {
         List<Integer> numList = getSortIntegers(list);
         List<Integer> numList1 = getSortIntegers(list1);
-        int pairCount = 0;
-        int pairCount1 = 0;
-        pairCount = getPairCount(numList, pairCount);
-        pairCount1 = getPairCount(numList1, pairCount1);
-        if(pairCount>pairCount1){
+        Map<Integer, Integer> pairCount = getPairCount(numList);
+        Map<Integer, Integer> pairCount1 = getPairCount(numList1);
+        System.out.println("count:"+pairCount.size()+",count1:"+pairCount1.size());
+        if(pairCount.size()>pairCount1.size()){
             return "list win";
+        }
+        if(pairCount.size()==pairCount1.size()&&pairCount.size()>0){
+            int numMax = getListMax(pairCount);
+            int numMax1 = getListMax(pairCount1);
+            if(numMax1>numMax){
+                return "list1 win";
+            }
         }
         if(numList.containsAll(numList1)){
             return "equal";
@@ -26,6 +31,10 @@ public class HandleCard {
         return null;
     }
 
+    private static int getListMax(Map<Integer, Integer> pairCount) {
+        return (new ArrayList<Integer>(pairCount.keySet())).stream().mapToInt(num -> num).max().getAsInt();
+    }
+
     private static int getMax1(List<Card> list) {
         return list.stream().mapToInt(Card::getNum).max().getAsInt();
     }
@@ -36,14 +45,17 @@ public class HandleCard {
         return numList;
     }
 
-    private static int getPairCount(List<Integer> numList, int pairCount) {
-        for (Integer num : numList) {
+    private static Map getPairCount(List<Integer> numList) {
+        Set<Integer> numSet = new HashSet<>(numList);
+        Map<Integer,Integer> pairMap = new HashMap();
+        for (Integer num : numSet) {
             int count = Collections.frequency(numList, num);
             if (count > 1) {
-                pairCount++;
+                //pairCount++;
+                pairMap.put(num,count);
             }
         }
-        return pairCount;
+        return pairMap;
     }
 
 }
