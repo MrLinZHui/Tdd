@@ -103,4 +103,18 @@ public class CardTest {
         //then
         Assert.assertEquals("list1 win",result);
     }
+
+    @Test
+    public void should_return_equal_when_give_two_same_double_tow__pair_list_and_the_simple_card_is_equal_too(){
+        //given
+        List list = Arrays.asList(new Card("2s"),
+                new Card("2d"), new Card("6s"), new Card("6d"), new Card("7d"));
+        List list1 = Arrays.asList(new Card("2s"),
+                new Card("2d"), new Card("6s"), new Card("6d"), new Card("7s"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("equal",result);
+    }
 }
