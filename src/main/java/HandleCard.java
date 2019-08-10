@@ -12,6 +12,9 @@ public class HandleCard {
         Set<Character> types = list.stream().map(Card::getType).collect(Collectors.toSet());
         Set<Character> types1 = list1.stream().map(Card::getType).collect(Collectors.toSet());
         System.out.println("types:"+types.size()+",types1:"+types1.size());
+        if(pairCount1.size()>1&&((new ArrayList<Integer>(pairCount1.values())).stream().filter(num -> num>2)).count()>0){
+            return "list1 win";
+        }
         if(types1.size()==1){
             if(types.size()!=1){
                 return "list1 win";

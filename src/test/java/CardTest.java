@@ -214,4 +214,18 @@ public class CardTest {
         //then
         Assert.assertEquals("list1 win",result);
     }
+
+    @Test
+    public void should_return_list1_win_when_a_same_color_lists_and_a_three_pair_and_two_pair_list1(){
+        //given
+        List list = Arrays.asList(new Card("5s"),
+                new Card("6s"), new Card("7s"), new Card("8s"), new Card("10s"));
+        List list1 = Arrays.asList(new Card("3d"),
+                new Card("2d"), new Card("2s"), new Card("2h"), new Card("3h"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("list1 win",result);
+    }
 }
