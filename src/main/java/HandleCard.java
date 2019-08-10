@@ -10,12 +10,13 @@ public class HandleCard {
         Map<Integer, Integer> pairCount = getPairCount(numList);
         Map<Integer, Integer> pairCount1 = getPairCount(numList1);
         System.out.println("count:"+pairCount.size()+",count1:"+pairCount1.size());
-        if(pairCount.size()>0&&pairCount1.size()>0){
-            int numMax = getListMax(pairCount);
-            int numMax1 = getListMax(pairCount1);
-            if(pairCount.get(numMax)>pairCount1.get(numMax1)){
-               return "list win";
+        if(Collections.max(numList)-Collections.min(numList)==4&&pairCount.size()==0){
+            if(pairCount1.size()>0||Collections.max(numList1)-Collections.min(numList1)!=4) {
+                return "list win";
             }
+        }
+        if(pairCount.size()>0&&pairCount1.size()>0){
+            if (getThreePair(pairCount, pairCount1)) return "list win";
         }
         if(pairCount.size()>pairCount1.size()){
             return "list win";
@@ -24,11 +25,7 @@ public class HandleCard {
             return "list1 win";
         }
         if(pairCount.size() > 0){
-            int numMax = getListMax(pairCount);
-            int numMax1 = getListMax(pairCount1);
-            if(numMax1>numMax){
-                return "list1 win";
-            }
+            if (getListHigh(pairCount, pairCount1)) return "list1 win";
         }
         if(numList.containsAll(numList1)){
             return "equal";
@@ -36,6 +33,24 @@ public class HandleCard {
         String x = getString(list, list1);
         if (x != null) return x;
         return null;
+    }
+
+    private static boolean getThreePair(Map<Integer, Integer> pairCount, Map<Integer, Integer> pairCount1) {
+        int numMax = getListMax(pairCount);
+        int numMax1 = getListMax(pairCount1);
+        if(pairCount.get(numMax)>pairCount1.get(numMax1)){
+            return true;
+        }
+        return false;
+    }
+
+    private static boolean getListHigh(Map<Integer, Integer> pairCount, Map<Integer, Integer> pairCount1) {
+        int numMax = getListMax(pairCount);
+        int numMax1 = getListMax(pairCount1);
+        if(numMax1>numMax){
+            return true;
+        }
+        return false;
     }
 
     private static String getString(List<Card> list, List<Card> list1) {
