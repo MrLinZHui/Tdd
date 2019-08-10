@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CardTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-08-10T04:15:47" hostname="ZHA-ITA114-W10" time="0.018">
+<testsuite name="CardTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-08-10T04:38:56" hostname="ZHA-ITA114-W10" time="0.013">
   <properties/>
-  <testcase name="should_return_equal_when_give_two_high_list_num_is_equal" classname="CardTest" time="0.014"/>
-  <testcase name="should_return_list1_win_when_give_two_high_list" classname="CardTest" time="0.003"/>
-  <system-out><![CDATA[[2, 3, 5, 9, 14],[2, 3, 5, 9, 14]
+  <testcase name="should_return_list1_win_when_give_two_high_list" classname="CardTest" time="0.012"/>
+  <testcase name="should_return_list_win_when_give_a__pair_list_and_a_high_card" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_equal_when_give_two_num_same_cards" classname="CardTest" time="0.001"/>
+  <system-out><![CDATA[count:0,count1:0
 [2, 3, 5, 6, 7],[3, 4, 5, 9, 14]
+count:2,count1:0
+count:0,count1:0
+[2, 3, 5, 9, 14],[2, 3, 5, 9, 14]
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
