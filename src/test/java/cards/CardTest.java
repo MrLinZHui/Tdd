@@ -1,3 +1,7 @@
+package cards;
+
+import cards.Card;
+import cards.HandleCard;
 import org.junit.Assert;
 import org.junit.Test;
 

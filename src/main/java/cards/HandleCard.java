@@ -1,3 +1,5 @@
+package cards;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -11,7 +13,6 @@ public class HandleCard {
         Map<Integer, Integer> pairCount1 = getPairCount(numList1);
         Set<Character> types = list.stream().map(Card::getType).collect(Collectors.toSet());
         Set<Character> types1 = list1.stream().map(Card::getType).collect(Collectors.toSet());
-        System.out.println("types:"+types.size()+",types1:"+types1.size());
         if(pairCount1.size()==1&&((new ArrayList<Integer>(pairCount1.values())).stream().filter(num -> num>3)).count()>0){
             return "list1 win";
         }
@@ -23,7 +24,6 @@ public class HandleCard {
                 return "list1 win";
             }
         }
-        System.out.println("count:"+pairCount.size()+",count1:"+pairCount1.size());
         if(Collections.max(numList)-Collections.min(numList)==4&&pairCount.size()==0){
             if(pairCount1.size()>0||Collections.max(numList1)-Collections.min(numList1)!=4) {
                 return "list win";
