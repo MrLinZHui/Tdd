@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-10T06:01:27" hostname="ZHA-ITA114-W10" time="0.013">
+<testsuite name="CardTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2019-08-10T06:02:50" hostname="ZHA-ITA114-W10" time="0.016">
   <properties/>
-  <testcase name="should_return_list1_win_when_give_two_three__pair_lists_and_list1_is_high_than_list" classname="CardTest" time="0.013"/>
-  <system-out><![CDATA[count:1,count1:1
+  <testcase name="should_return_list_win_when_give_a_three__pair_list_and_a_two_double_two_pair_list1" classname="CardTest" time="0.012"/>
+  <testcase name="should_return_list1_win_when_give_two_high_list" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_list1_win_when_give_tow__pair_list_and_list1_pair_is_high_than_list" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_equal_when_give_two_same_double_two__pair_list_and_the_simple_card_is_equal_too" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_list1_win_when_give_two_three__pair_lists_and_list1_is_high_than_list" classname="CardTest" time="0.001"/>
+  <testcase name="should_return_list_win_when_give_a__pair_list_and_a_high_card" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_equal_when_give_two_num_same_cards" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_list1_win_when_give_two_same_double_tow__pair_list_and_list1_simple_card_is_high_than_list" classname="CardTest" time="0.0"/>
+  <testcase name="should_return_list1_win_when_give_two_double_tow__pair_list_and_list1_is_high_than_list" classname="CardTest" time="0.001"/>
+  <testcase name="should_return_list_win_when_give_a_double_tow__pair_list_and_a_tow_pair_list1" classname="CardTest" time="0.0"/>
+  <system-out><![CDATA[count:1,count1:2
+count:0,count1:0
+count:1,count1:1
+count:2,count1:2
+count:1,count1:1
+count:1,count1:0
+count:0,count1:0
+count:2,count1:2
+count:2,count1:2
+count:2,count1:1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
