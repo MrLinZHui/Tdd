@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="CardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-10T05:29:17" hostname="ZHA-ITA114-W10" time="0.011">
+<testsuite name="CardTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-08-10T05:37:26" hostname="ZHA-ITA114-W10" time="0.012">
   <properties/>
-  <testcase name="should_return_list_win_when_give_a_double_tow__pair_list_and_a_tow_pair_list1" classname="CardTest" time="0.011"/>
-  <system-out><![CDATA[count:2,count1:1
+  <testcase name="should_return_list1_win_when_give_two_double_tow__pair_list_and_list1_is_hight_than_list" classname="CardTest" time="0.012"/>
+  <system-out><![CDATA[count:2,count1:2
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

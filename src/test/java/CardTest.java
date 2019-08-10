@@ -4,7 +4,6 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 
-//input: 1s 2D 3s 5D
 public class CardTest {
     @Test
     public void should_return_list1_win_when_give_two_high_list(){
@@ -16,7 +15,6 @@ public class CardTest {
         HandleCard handleCard = new HandleCard();
         //when
         String result = HandleCard.compareCard(list, list1);
-
         //then
         Assert.assertEquals("list1 win",result);
 
@@ -32,7 +30,6 @@ public class CardTest {
         HandleCard handleCard = new HandleCard();
         //when
         String result = HandleCard.compareCard(list, list1);
-
         //then
         Assert.assertEquals("equal",result);
     }
@@ -49,7 +46,6 @@ public class CardTest {
         String result = HandleCard.compareCard(list, list1);
         //then
         Assert.assertEquals("list win",result);
-
     }
 
     @Test
@@ -64,7 +60,6 @@ public class CardTest {
         String result = HandleCard.compareCard(list, list1);
         //then
         Assert.assertEquals("list1 win",result);
-
     }
 
     @Test
@@ -79,6 +74,19 @@ public class CardTest {
         String result = HandleCard.compareCard(list, list1);
         //then
         Assert.assertEquals("list win",result);
+    }
 
+    @Test
+    public void should_return_list1_win_when_give_two_double_tow__pair_list_and_list1_is_hight_than_list(){
+        //given
+        List list = Arrays.asList(new Card("2s"),
+                new Card("2d"), new Card("6s"), new Card("6d"), new Card("As"));
+        List list1 = Arrays.asList(new Card("4s"),
+                new Card("4d"), new Card("7s"), new Card("7d"), new Card("3s"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("list1 win",result);
     }
 }
