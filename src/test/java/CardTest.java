@@ -34,6 +34,5 @@ public class CardTest {
 
         //then
         Assert.assertEquals("equal",result);
-
     }
 }
