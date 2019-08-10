@@ -27,6 +27,8 @@ public class HandleCard {
         int max2 = getMax1(list1);
         if(max1<max2){
             return "list1 win";
+        }else if (max1>max2){
+            return "list win";
         }
         return null;
     }
