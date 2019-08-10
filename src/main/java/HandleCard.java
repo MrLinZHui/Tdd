@@ -10,10 +10,20 @@ public class HandleCard {
         Map<Integer, Integer> pairCount = getPairCount(numList);
         Map<Integer, Integer> pairCount1 = getPairCount(numList1);
         System.out.println("count:"+pairCount.size()+",count1:"+pairCount1.size());
+        if(pairCount.size()>0&&pairCount1.size()>0){
+            int numMax = getListMax(pairCount);
+            int numMax1 = getListMax(pairCount1);
+            if(pairCount.get(numMax)>pairCount1.get(numMax1)){
+               return "list win";
+            }
+        }
         if(pairCount.size()>pairCount1.size()){
             return "list win";
         }
-        if(pairCount.size()==pairCount1.size()&&pairCount.size()>0){
+        if(pairCount.size()<pairCount1.size()){
+            return "list1 win";
+        }
+        if(pairCount.size() > 0){
             int numMax = getListMax(pairCount);
             int numMax1 = getListMax(pairCount1);
             if(numMax1>numMax){
@@ -23,6 +33,12 @@ public class HandleCard {
         if(numList.containsAll(numList1)){
             return "equal";
         }
+        String x = getString(list, list1);
+        if (x != null) return x;
+        return null;
+    }
+
+    private static String getString(List<Card> list, List<Card> list1) {
         int max1 = getMax1(list);
         int max2 = getMax1(list1);
         if(max1<max2){
@@ -53,7 +69,6 @@ public class HandleCard {
         for (Integer num : numSet) {
             int count = Collections.frequency(numList, num);
             if (count > 1) {
-                //pairCount++;
                 pairMap.put(num,count);
             }
         }

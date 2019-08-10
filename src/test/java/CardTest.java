@@ -105,7 +105,7 @@ public class CardTest {
     }
 
     @Test
-    public void should_return_equal_when_give_two_same_double_tow__pair_list_and_the_simple_card_is_equal_too(){
+    public void should_return_equal_when_give_two_same_double_two__pair_list_and_the_simple_card_is_equal_too(){
         //given
         List list = Arrays.asList(new Card("2s"),
                 new Card("2d"), new Card("6s"), new Card("6d"), new Card("7d"));
@@ -117,4 +117,31 @@ public class CardTest {
         //then
         Assert.assertEquals("equal",result);
     }
+
+    @Test
+    public void should_return_list_win_when_give_a_three__pair_list_and_a_two_double_two_pair_list1(){
+        //given
+        List list = Arrays.asList(new Card("2s"),
+                new Card("2d"), new Card("2c"), new Card("6d"), new Card("7d"));
+        List list1 = Arrays.asList(new Card("3s"),
+                new Card("3d"), new Card("6s"), new Card("6d"), new Card("7s"));
+        HandleCard handleCard = new HandleCard();
+        //when
+        String result = HandleCard.compareCard(list, list1);
+        //then
+        Assert.assertEquals("list win",result);
+    }
+//    @Test
+//    public void should_return_list1_win_when_give_two_three__pair_lists_and_list1_is_high_than_list(){
+//        //given
+//        List list = Arrays.asList(new Card("2s"),
+//                new Card("2d"), new Card("2c"), new Card("6d"), new Card("7d"));
+//        List list1 = Arrays.asList(new Card("3s"),
+//                new Card("3d"), new Card("3c"), new Card("6d"), new Card("7s"));
+//        HandleCard handleCard = new HandleCard();
+//        //when
+//        String result = HandleCard.compareCard(list, list1);
+//        //then
+//        Assert.assertEquals("list1 win",result);
+//    }
 }
